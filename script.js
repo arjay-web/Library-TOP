@@ -1,6 +1,7 @@
 let newBookBtn = document.querySelector('#new-book-btn');
 let newBookForm = document.querySelector('#new-book-form');
 let newBookCancel = document.querySelector('#new-book-cancel');
+const libraryContainer = document.querySelector('#library');
 
 const myLibrary = [];
 
@@ -25,8 +26,32 @@ function addBookToLibrary() {
     let read = document.getElementById('read').checked;
     let newBook = new Book(title, author, pages, read);
     myLibrary.push(newBook);
-    console.log(myLibrary)
+
+    renderLibrary();
+    newBookForm.reset();
 }
+
+function renderLibrary(){
+    libraryContainer.innerHTML = "";
+
+    myLibrary.forEach((book, index)=>{
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+
+        bookDiv.innerHTML =`
+        <h3>${book.title}</h3>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Status: ${book.isRead ? "Read" : "Not Read"}</p>`;
+
+        libraryContainer.appendChild(bookDiv);
+    })
+}
+myLibrary.push(
+    new Book('Harry Potter', 'J.k Rowling', 272, true)
+)
+
+renderLibrary()
 
 newBookForm.addEventListener('submit', ()=>{
     event.preventDefault();
