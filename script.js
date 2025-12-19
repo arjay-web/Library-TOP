@@ -48,7 +48,9 @@ function renderLibrary(){
     })
 }
 myLibrary.push(
-    new Book('Harry Potter', 'J.k Rowling', 272, true)
+    new Book('Harry Potter', 'J.k Rowling', 272, true),
+    new Book('The Hobbit', 'J.R.R. Tolkien', 310, true),
+    new Book('Clean Code', 'Robert C. Martin', 464, false)
 )
 
 renderLibrary()

@@ -1,0 +1,82 @@
+:root{
+    --bg:#f6f7fb;;
+    --card: #fff;
+    --muted:#6b7280;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--bg);
+    gap: 20px;
+    padding: 20px;
+}
+
+button, input[type="submit"] {
+    background-color:#007ACC;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+}
+
+.book-form-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--card);
+    border-radius: 10px;;
+    width: 40vw;
+    padding: 20px;
+    gap: 10px;
+    box-shadow:0 2px 6px rgba(2,6,23,0.06);
+}
+
+input[type="text"], 
+input[type="number"] {
+    height: 30px;
+    font-size: 18px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+    margin: 5px;
+}
+
+.book {
+    border-radius: 10px;
+    width: 32%;
+    padding: 10px;
+    background-color: var(--card);
+    box-shadow:0 2px 6px rgba(2,6,23,0.06);
+}
+#library {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 40vw;
+}
+
+#library h3{
+    font-size: 15px;
+}
+#library p{
+    font-size: 15px;
+    color: var(--muted)
+}
